@@ -1,0 +1,57 @@
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@1.0.4
+
+commands:
+  test:
+    steps:
+      - run:
+          name: Version
+          command: node --version
+      - checkout
+      - run:
+          name: Update npm to Latest
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache{{ checksum "package.json" }}
+      - run:
+          name: Install Project Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Run Module tests
+          command: npm test
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_test_results:
+          path: test-results.xml
+      - codecov/upload
+
+jobs:
+  node-v8:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - test
+  node-v10:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - test
+  node-v12:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - test
+
+workflows:
+  node-multi-build:
+    jobs:
+      - node-v8
+      - node-v10
+      - node-v12

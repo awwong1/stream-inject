@@ -2,21 +2,23 @@
   "name": "stream-inject",
   "version": "1.0.0",
   "description": "Inject values into a NodeJS Stream",
-  "main": "dist/index.js",
+  "main": "dist/streamInjector.js",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
     "test": "jest",
     "posttest": "npm run lint",
-    "lint": "tslint --project . --config tslint.json"
+    "lint": "tslint --project . --config tslint.json",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.udia.ca:alex/stream-inject.git"
+    "url": "git@github.com:awwong1/stream-inject.git"
   },
   "keywords": [
     "stream",
-    "inject"
+    "inject",
+    "replace"
   ],
   "author": {
     "name": "Alexander Wong",
@@ -42,6 +44,17 @@
       "src/**/*.{ts,js}",
       "!**/node_modules/**"
     ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
     "coverageDirectory": "coverage"
-  }
+  },
+  "typings": "dist/streamInjector.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
 }
