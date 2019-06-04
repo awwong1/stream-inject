@@ -1,0 +1,47 @@
+{
+  "name": "stream-inject",
+  "version": "1.0.0",
+  "description": "Inject values into a NodeJS Stream",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "test": "jest",
+    "posttest": "npm run lint",
+    "lint": "tslint --project . --config tslint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.udia.ca:alex/stream-inject.git"
+  },
+  "keywords": [
+    "stream",
+    "inject"
+  ],
+  "author": {
+    "name": "Alexander Wong",
+    "email": "alex@udia.ca"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "typescript-tslint-plugin": "^0.4.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{ts,js}",
+      "!**/node_modules/**"
+    ],
+    "coverageDirectory": "coverage"
+  }
+}
