@@ -8,7 +8,7 @@ commands:
     steps:
       - run:
           name: Version
-          command: node --version
+          command: npm version
       - checkout
       - run:
           name: Update npm to Latest
