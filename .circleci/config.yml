@@ -14,12 +14,12 @@ commands:
           name: Update npm to Latest
           command: sudo npm install -g npm@latest
       - restore_cache:
-          key: dependency-cache{{ checksum "package.json" }}
+          key: dependency-{{ .Environment.CIRCLE_JOB }}-cache{{ checksum "package.json" }}
       - run:
           name: Install Project Dependencies
           command: npm install
       - save_cache:
-          key: dependency-cache{{ checksum "package.json" }}
+          key: dependency-{{ .Environment.CIRCLE_JOB }}-cache{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:

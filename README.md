@@ -1,6 +1,7 @@
 # stream-inject
 
 [![CircleCI](https://circleci.com/gh/awwong1/stream-inject.svg?style=svg)](https://circleci.com/gh/awwong1/stream-inject)
+[![codecov](https://codecov.io/gh/awwong1/stream-inject/branch/master/graph/badge.svg)](https://codecov.io/gh/awwong1/stream-inject)
 
 Inject values (`string`, `Stream`) into a NodeJS Stream. Supports replace by string and regular expression.
 
