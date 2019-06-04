@@ -1,5 +1,5 @@
 import { Readable } from "stream";
-import { StreamInjector } from "../streamInjector";
+import { StreamInjector } from "..";
 
 describe("string replaceValue", () => {
   describe("non-boundary", () => {
