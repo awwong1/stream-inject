@@ -1,8 +1,8 @@
 {
   "name": "stream-inject",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Inject values into a NodeJS Stream",
-  "main": "dist/streamInjector.js",
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
@@ -50,7 +50,7 @@
     ],
     "coverageDirectory": "coverage"
   },
-  "typings": "dist/streamInjector.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "package.json",

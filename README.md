@@ -6,6 +6,7 @@
 Inject values (`string`, `Stream`) into a NodeJS Stream. Supports replace by string and regular expression.
 
 ```bash
+npm install stream-inject
 ```
 
 ```typescript
