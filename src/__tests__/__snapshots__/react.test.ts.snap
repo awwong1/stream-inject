@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`combination should handle a basic react ssr workflow 1`] = `
+"<!DOCTYPE html>
+<html lang=\\"en\\">
+
+<head>
+  <meta charset=\\"utf-8\\">
+  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1, shrink-to-fit=no\\">
+  <meta name=\\"author\\" content=\\"Transform Stream Use Case\\">
+</head>
+
+<body>
+  <div id=\\"root\\"><div data-reactroot=\\"\\">Stub Test Component</div></div>
+</body>
+<script>window.__PRELOADED_REDUX_DATA__= {\\"a\\":1}</script>
+
+</html>
+"
+`;

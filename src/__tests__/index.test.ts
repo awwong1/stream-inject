@@ -300,5 +300,4 @@ describe("stream replaceValue", () => {
       });
     });
   });
-
 });

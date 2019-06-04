@@ -1,4 +1,4 @@
-import { Stream, Transform, TransformCallback } from "stream";
+import { Stream, Transform } from "stream";
 
 // tslint:disable-next-line: interface-name
 interface StreamInjectorOptions {
@@ -25,7 +25,7 @@ export class StreamInjector extends Transform {
     this.streamReplaced = false;
   }
 
-  public _transform(chunk: any, _: string, callback: TransformCallback) {
+  public _transform(chunk: any, _: string, callback: (error?: Error | null | undefined, data?: any) => void) {
     const { encoding } = this.injectOptions;
     let streamCallbackInterrupted = false;
 
@@ -55,7 +55,7 @@ export class StreamInjector extends Transform {
         this.push(data);
         streamCallbackInterrupted = true;
         this.streamReplaced = true;
-        this.replaceValue.on("data", (replChunk) =>  this.push(replChunk));
+        this.replaceValue.on("data", (replChunk) => this.push(replChunk));
         this.replaceValue.on("end", () => callback(null));
       } else {
         data = Buffer.from(chunkStr, encoding);
@@ -77,12 +77,12 @@ export class StreamInjector extends Transform {
       }
     }
 
-    if (! streamCallbackInterrupted) {
+    if (!streamCallbackInterrupted) {
       callback(null, data);
     }
   }
 
-  public _flush(callback: TransformCallback) {
+  public _flush(callback: (error?: Error | null | undefined, data?: any) => void) {
     while (this.chunksStack.length) {
       const currentChunkString = this.chunksStack.pop();
       if (currentChunkString) {

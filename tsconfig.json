@@ -19,6 +19,7 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "jsx": "react",
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
