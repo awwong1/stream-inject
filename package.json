@@ -1,6 +1,6 @@
 {
   "name": "stream-inject",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Inject values into a NodeJS Stream",
   "main": "dist/index.js",
   "scripts": {
@@ -26,17 +26,17 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "@types/react": "^16.8.19",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.5",
+    "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.17.0",
-    "typescript": "^3.5.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
     "typescript-tslint-plugin": "^0.4.0"
   },
   "jest": {
